@@ -1,0 +1,127 @@
+@import "transition-style";
+
+@font-face {
+    font-family: 'Dearlove';
+    src: url(./assets/fonts/Dearlove.ttf);
+}
+
+@font-face {
+    font-family: 'Ambroise';
+    src: url(./assets/fonts/AmbroiseLightRegular.otf);
+}
+
+.Dearlove {
+    font-family: 'Dearlove', sans-serif;
+}
+
+.Ambroise {
+    font-family: 'Ambroise', sans-serif;
+}
+
+.NavBar {
+    font-family: 'Dearlove', sans-serif;
+    background-color: #E4DAC6;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: black;
+}
+
+h3 {
+    text-decoration: none;
+    color: black;
+}
+
+.Categories {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* .Option {
+    text-decoration: none;
+    color: black;
+    box-shadow: inset 0 0 0 0 #F0A4A9;
+    padding: 0 .25rem;
+    margin: 0 -.25rem;
+    transition: color .3s ease-in-out, box-shadow .5s ease-in-out;
+    
+}
+
+.Option:hover {
+    color: #000000;
+    box-shadow: inset 200px 0 0 0 #F0A4A9;;
+} */
+
+
+/* .Option{
+    display: block;
+    color: black;
+    text-decoration: none;
+    position: relative;
+}
+
+.Option::after{
+    content: "";
+    background: #F0A4A9;
+    mix-blend-mode: darken  ;
+    width: calc(100% + 20px);
+    height: 0;
+    position: absolute;
+    bottom: -4px;
+    left: -10px;
+    transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+    .Option:hover::after{
+        height: calc(100% + 8px)
+} */
+
+
+.Option {
+    text-decoration: none;
+    color: black;
+    padding: 0 15px;
+    box-shadow: inset 0 0 0 0 #F0A4A9;
+    transition: all 0.3s ease-in-out 0s;
+}
+.Option:hover {
+    box-shadow: inset 0 -300px 0 0 #F0A4A9;
+    color: black;
+}
+
+
+
+
+.Logo{
+    display: flex;
+}
+
+.LogoEdit {
+    width: 100px;
+    height: 100px;
+}
+
+.ActiveOption {
+    text-decoration: none;
+    color: black;
+    border-bottom: 4px solid #F0A4A9;
+
+}
+
+
+@keyframes square-in-hesitate {
+    0% {
+        clip-path: inset(100% 100% 100% 100%);
+        }
+    40% {
+        clip-path: inset(33% 33% 33% 33%);
+        }
+    100% {
+        clip-path: inset(0 0 0 0);
+        }
+    }
+
+    [transition-style="in:square:hesitate"] {
+        animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-in-hesitate both;
+    }
