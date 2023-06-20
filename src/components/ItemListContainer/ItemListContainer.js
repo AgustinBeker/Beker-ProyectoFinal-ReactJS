@@ -1,32 +1,28 @@
-import { useState, useEffect } from "react"
-import { getProducts, getProductsByCategory } from "../../asyncMock"
-import ItemList from "../ItemList/ItemList"
+import { useState, useEffect } from 'react'
+import ItemList from '../ItemList/ItemList'
+import { getProducts,getProductsByCategory } from '../../asyncMock'
+import { useParams } from 'react-router-dom'
 
-import { useParams } from "react-router-dom"
+const ItemListContainer = ({ greeting }) => {
+    const [products, setProducts] = useState([]);
 
-const  ItemListContainer = ({greeting}) => {
-    const [products, setProducts] = useState([])
+    const { categoryId } = useParams();
 
-    const {categoryId} = useParams ()
+    useEffect(() => {
 
-    useEffect (() => {
-        const asyncFunc = categoryId ? getProductsByCategory : getProducts
+    const productsFunc = categoryId ? getProductsByCategory : getProducts;
 
-        asyncFunc (categoryId)
-            .then (response => {
-                setProducts (response)
-            })
-            .catch (error => {
-                console.error(error);
-            })
+    productsFunc(categoryId)
+        .then(res => setProducts(res))
+        .catch(error => console.error(error))
     }, [categoryId])
 
-    return (
-        <div>
-            <h1>{greeting}</h1>
-            <ItemList products={products}/>
-        </div>
-    )
+  return (
+    <>
+      <h2> {greeting} </h2>
+      <ItemList products={products} />
+    </>
+  )
 }
 
 export default ItemListContainer
