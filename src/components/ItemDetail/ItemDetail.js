@@ -17,6 +17,7 @@ const ItemDetail = ({id, name, price, img, category, description, stock}) => {
         addItem(item, quantity);
     }
 
+
     return (
         <article className="CardItem">
             <header className="Header">
@@ -37,14 +38,11 @@ const ItemDetail = ({id, name, price, img, category, description, stock}) => {
                 <p className="Info">
                     Precio: ${price}
                 </p>
-                <p className="Info">
-                    ID: {id}
-                </p>
             </section>
             <footer className='ItemFooter'>
             {
                 quantityAdded > 0 ? (
-                    <Link to="/cart" className='Option'> Terminar Compra </Link>
+                    <Link to="/cart" className='Option' > Terminar Compra </Link>
                 ) : (
                     <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
                 )
