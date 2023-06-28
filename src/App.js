@@ -6,7 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart';
 import { Footer } from './components/Footer/Footer';
 import { CartProvider } from './context/CartContext';
-// import Productos from './components/Productos/Productos';
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
             <Route path='/cart' element={<Cart />}/>
             <Route path='*' element={<h1>404 NOT FOUND</h1>} />
-            {/* <Route path='/products' element={<Productos/>} /> */}
+            <Route path='/checkout' element={<Checkout/>} /> 
           </Routes>
           <Footer/>      
         </CartProvider>

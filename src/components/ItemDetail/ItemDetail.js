@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 import { useContext } from 'react';
 
-const ItemDetail = ({id, name, price, img, category, description, stock}) => {
+const ItemDetail = ({id, name, price, img, categoryId, description, stock}) => {
     const [quantityAdded, setQuantityAdded] = useState(0);
 
     const { addItem } = useContext(CartContext);
@@ -30,7 +30,7 @@ const ItemDetail = ({id, name, price, img, category, description, stock}) => {
             </picture>
             <section>
                 <p className="Info">
-                    Categoria: {category}
+                    Categoria: {categoryId}
                 </p>
                 <p className="Info">
                     Descripcion: {description}
@@ -38,6 +38,7 @@ const ItemDetail = ({id, name, price, img, category, description, stock}) => {
                 <p className="Info">
                     Precio: ${price}
                 </p>
+                <hr></hr>
             </section>
             <footer className='ItemFooter'>
             {

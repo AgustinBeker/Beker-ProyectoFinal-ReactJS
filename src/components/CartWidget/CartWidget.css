@@ -1,4 +1,17 @@
+p{
+    margin-bottom: auto;
+}
+
 .CartWidget {
     display: flex;
     gap: 20px;
+    text-decoration: none;
+}
+
+.cantidad-carrito {
+    background-color: #56A037;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size:50px;
+    border-radius: 50px;
+    color: black;
 }
